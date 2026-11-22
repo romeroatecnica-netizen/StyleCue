@@ -1,8 +1,13 @@
 import {useState} from 'react';
-import {Scissors, Sparkles, Shirt, Palette, Printer, Check} from 'lucide-react';
+import {Scissors, Sparkles, Shirt, Palette, Printer, Check, AlertTriangle} from 'lucide-react';
 import type {TranslationDictionary} from '../i18n/types';
 import type {AdvisoryResult, AdvisoryTab, PaletteColor, UserCalibration} from '../types/stylecue';
 import {ColorHarmonyDiagram} from './ColorHarmonyDiagram';
+import {
+  HairCroquisDiagram,
+  MakeupCroquisDiagram,
+  OutfitCroquisDiagram,
+} from './CroquisIllustrations';
 
 interface AdvisoryResultsProps {
   advisory: AdvisoryResult;
@@ -107,7 +112,7 @@ export function AdvisoryResults({
           <div className="grid gap-6 lg:grid-cols-2">
             {showHair && (
               <article className="rounded-xl border border-[#E7E5E4] bg-[#FAF9F7]/60 p-6 print-break-inside-avoid">
-                <div className="flex items-start justify-between gap-4 border-b border-[#E7E5E4] pb-4">
+                <div className="flex items-start justify-between gap-4 border-b border-[#E7E5E4] pb-4 mb-4">
                   <div>
                     <p className="text-xs font-medium text-[#0F766E]">{t.results.hairPillar.kicker}</p>
                     <h3 className="mt-1 font-display text-lg font-bold text-[#1C1917]">
@@ -116,7 +121,10 @@ export function AdvisoryResults({
                   </div>
                   <Scissors className="h-5 w-5 shrink-0 text-[#9F1239]" aria-hidden="true" />
                 </div>
-                <dl className="mt-4 space-y-4 text-sm">
+
+                <HairCroquisDiagram calibration={calibration} t={t} />
+
+                <dl className="space-y-4 text-sm">
                   <PillarDetail
                     term={t.results.hairPillar.cutLabel}
                     desc={t.results.hairPillar.cutsByFace[calibration.faceShape]}
@@ -139,7 +147,7 @@ export function AdvisoryResults({
 
             {showMakeup && (
               <article className="rounded-xl border border-[#E7E5E4] bg-[#FAF9F7]/60 p-6 print-break-inside-avoid">
-                <div className="flex items-start justify-between gap-4 border-b border-[#E7E5E4] pb-4">
+                <div className="flex items-start justify-between gap-4 border-b border-[#E7E5E4] pb-4 mb-4">
                   <div>
                     <p className="text-xs font-medium text-[#0F766E]">{t.results.makeupPillar.kicker}</p>
                     <h3 className="mt-1 font-display text-lg font-bold text-[#1C1917]">
@@ -148,7 +156,10 @@ export function AdvisoryResults({
                   </div>
                   <Sparkles className="h-5 w-5 shrink-0 text-[#9F1239]" aria-hidden="true" />
                 </div>
-                <dl className="mt-4 space-y-4 text-sm">
+
+                <MakeupCroquisDiagram calibration={calibration} advisory={advisory} t={t} />
+
+                <dl className="space-y-4 text-sm">
                   <PillarDetail
                     term={t.results.makeupPillar.baseLabel}
                     desc={t.results.makeupPillar.baseByLevel[calibration.makeupLevel]}
@@ -170,12 +181,8 @@ export function AdvisoryResults({
             )}
 
             {showOutfits && (
-              <article
-                className={`rounded-xl border border-[#E7E5E4] bg-[#FAF9F7]/60 p-6 print-break-inside-avoid ${
-                  activeTab === 'outfits' ? 'lg:col-span-2' : 'lg:col-span-2'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-4 border-b border-[#E7E5E4] pb-4">
+              <article className="rounded-xl border border-[#E7E5E4] bg-[#FAF9F7]/60 p-6 print-break-inside-avoid lg:col-span-2">
+                <div className="flex items-start justify-between gap-4 border-b border-[#E7E5E4] pb-4 mb-4">
                   <div>
                     <p className="text-xs font-medium text-[#0F766E]">{t.results.outfitPillar.kicker}</p>
                     <h3 className="mt-1 font-display text-lg font-bold text-[#1C1917]">
@@ -184,7 +191,10 @@ export function AdvisoryResults({
                   </div>
                   <Shirt className="h-5 w-5 shrink-0 text-[#9F1239]" aria-hidden="true" />
                 </div>
-                <dl className="mt-4 grid gap-5 text-sm md:grid-cols-2">
+
+                <OutfitCroquisDiagram calibration={calibration} advisory={advisory} t={t} />
+
+                <dl className="grid gap-5 text-sm md:grid-cols-2">
                   <PillarDetail
                     term={t.results.outfitPillar.silhouetteLabel}
                     desc={t.results.outfitPillar.silhouetteByOccasion[calibration.occasion]}
@@ -349,7 +359,14 @@ function SwatchGroup({
 }) {
   return (
     <div>
-      <h4 className="font-display text-sm font-semibold text-[#1C1917]">{title}</h4>
+      <h4 className="flex items-center gap-1.5 font-display text-sm font-semibold text-[#1C1917]">
+        {muted ? (
+          <AlertTriangle className="h-3.5 w-3.5 text-[#B45309]" aria-hidden="true" />
+        ) : (
+          <Check className="h-3.5 w-3.5 text-[#0F766E]" aria-hidden="true" />
+        )}
+        <span>{title}</span>
+      </h4>
       <div className="mt-2.5 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
         {colors.map((color) => {
           const isCopied = copiedHex === color.hex;

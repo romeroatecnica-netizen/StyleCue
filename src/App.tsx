@@ -7,6 +7,7 @@ import {Footer} from './components/Footer';
 import {Header} from './components/Header';
 import {HeroAndPrivacy} from './components/HeroAndPrivacy';
 import {PhotoCalibrationStudio} from './components/PhotoCalibrationStudio';
+import {getCanonicalUrl} from './config/seo';
 import {TRANSLATIONS, detectInitialLocale, isSupportedLocale} from './i18n';
 import type {
   AdvisoryTab,
@@ -248,7 +249,11 @@ export default function App() {
     setLocale(nextLocale);
     try {
       const nextUrl = new URL(window.location.href);
-      nextUrl.searchParams.set('lang', nextLocale);
+      if (nextLocale === 'en') {
+        nextUrl.searchParams.delete('lang');
+      } else {
+        nextUrl.searchParams.set('lang', nextLocale);
+      }
       window.history.replaceState({}, '', nextUrl.toString());
     } catch {
       // Ignore history API errors in restricted contexts
@@ -257,8 +262,7 @@ export default function App() {
 
   const handleCopyShareLink = useCallback(async () => {
     try {
-      const shareUrl = new URL(window.location.href);
-      shareUrl.searchParams.set('lang', locale);
+      const shareUrl = new URL(getCanonicalUrl(locale));
       shareUrl.searchParams.set('occasion', calibration.occasion);
       shareUrl.searchParams.set('temp', calibration.temperature);
       shareUrl.searchParams.set('contrast', calibration.contrast);

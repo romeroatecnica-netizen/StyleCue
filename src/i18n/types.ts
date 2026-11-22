@@ -172,6 +172,32 @@ export interface TranslationDictionary {
       };
       colorNames: Record<string, string>;
     };
+    croquis: {
+      hairTitle: string;
+      hairSignals: {
+        crownLift: string;
+        jawSoften: string;
+        widthBalance: string;
+        partLine: string;
+      };
+      makeupTitle: string;
+      makeupSignals: {
+        skinGlow: string;
+        browFrame: string;
+        cheekZone: string;
+        lipZone: string;
+        spfShield: string;
+      };
+      outfitTitle: string;
+      outfitSignals: {
+        necklineGuide: string;
+        ratioTop: string;
+        ratioBottom: string;
+        focalAccent: string;
+        elongateArrow: string;
+        balanceArrow: string;
+      };
+    };
   };
   monetization: {
     adLabel: string;

@@ -1,3 +1,4 @@
+import {CANONICAL_ORIGIN, getCanonicalUrl} from '../config/seo';
 import {getLocaleConfig} from '../i18n';
 import type {TranslationDictionary} from '../i18n/types';
 import {SUPPORTED_LOCALES, type AdvisoryTab, type SupportedLocale} from '../types/stylecue';
@@ -16,6 +17,7 @@ export function syncDynamicSeo(
 ) {
   const localeConfig = getLocaleConfig(locale);
   const pageTitle = activeTab === 'all' ? t.seo.title : t.seo.tabTitles[activeTab];
+  const canonicalHref = getCanonicalUrl(locale);
 
   // Update <html lang dir>
   document.documentElement.lang = localeConfig.code;
@@ -27,24 +29,16 @@ export function syncDynamicSeo(
   setMetaContent('meta[property="og:title"]', pageTitle);
   setMetaContent('meta[property="og:description"]', t.seo.description);
   setMetaContent('meta[property="og:locale"]', localeConfig.ogLocale);
+  setMetaContent('meta[property="og:url"]', canonicalHref);
   setMetaContent('meta[name="twitter:title"]', pageTitle);
   setMetaContent('meta[name="twitter:description"]', t.seo.description);
-
-  // Build canonical & hreflang URLs from current origin/pathname
-  const baseUrl =
-    typeof window !== 'undefined'
-      ? `${window.location.origin}${window.location.pathname}`
-      : 'https://stylecue.pages.dev/';
-
-  const canonicalHref = `${baseUrl}?lang=${locale}`;
-  setMetaContent('meta[property="og:url"]', canonicalHref);
 
   const canonicalEl = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (canonicalEl) {
     canonicalEl.href = canonicalHref;
   }
 
-  // Ensure x-default and all 10 hreflang alternate links stay accurate to current host
+  // Ensure x-default and all 10 hreflang alternate links point strictly to CANONICAL_ORIGIN
   const upsertAlternate = (hreflang: string, href: string) => {
     let link = document.querySelector<HTMLLinkElement>(
       `link[rel="alternate"][hreflang="${hreflang}"]`,
@@ -58,12 +52,12 @@ export function syncDynamicSeo(
     link.href = href;
   };
 
-  upsertAlternate('x-default', `${baseUrl}?lang=en`);
+  upsertAlternate('x-default', `${CANONICAL_ORIGIN}/`);
   for (const loc of SUPPORTED_LOCALES) {
-    upsertAlternate(loc.code, `${baseUrl}?lang=${loc.code}`);
+    upsertAlternate(loc.code, getCanonicalUrl(loc.code));
   }
 
-  // Update dynamic JSON-LD (SoftwareApplication + FAQPage)
+  // Update dynamic JSON-LD (SoftwareApplication + FAQPage) with official canonical URL
   const jsonLdEl = document.getElementById('stylecue-jsonld');
   if (jsonLdEl) {
     const graph = {
@@ -86,6 +80,7 @@ export function syncDynamicSeo(
         {
           '@type': 'FAQPage',
           inLanguage: localeConfig.code,
+          url: canonicalHref,
           mainEntity: t.faq.items.map((item) => ({
             '@type': 'Question',
             name: item.q,
