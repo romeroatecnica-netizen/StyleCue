@@ -1,0 +1,6 @@
+{
+  "name": "StyleCue — Personal Style, Colorimetry, Hair, Makeup & Outfit Advisor",
+  "description": "100% browser-based, zero-upload personal style, colorimetry, hair, makeup, and outfit advisor powered by local canvas analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
