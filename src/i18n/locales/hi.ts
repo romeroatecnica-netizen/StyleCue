@@ -310,7 +310,7 @@ export const hi: TranslationDictionary = {
     affiliateTitle: 'आपकी प्रोफ़ाइल के लिए चुनी गई श्रेणियां',
     affiliateSubtitle: 'आपके स्किन फिनिश, बालों की बनावट और रंग पैलेट के अनुरूप उपयोगी विकल्प।',
     affiliateDisclosure:
-      'सहयोगी प्रकटीकरण: लिंक rel="sponsored nofollow noopener" का उपयोग करते हैं। पार्टनर URL जोड़ने पर StyleCue को बिना अतिरिक्त लागत कमीशन मिल सकता है।',
+      'संबद्ध प्रकटीकरण: उत्पाद लिंक rel="sponsored nofollow noopener" के साथ Amazon España (amazon.es) पर जाते हैं। Amazon सहयोगी के रूप में, StyleCue को योग्य खरीदारी से बिना किसी अतिरिक्त लागत के कमीशन प्राप्त होता है।',
     affiliateCta: 'श्रेणी देखें',
     affiliateCategories: {
       hair: {title: 'टेक्सचर अनुसार हेयर केयर', desc: 'हल्की हाइड्रेशन क्रीम, प्राकृतिक ब्रश और फ्रिज़ सुरक्षा।', tag: 'बालों की देखभाल'},

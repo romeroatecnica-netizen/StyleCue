@@ -1,7 +1,6 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {AdSlot} from './components/AdSlot';
 import {AdvisoryResults} from './components/AdvisoryResults';
-import {AffiliateRecommendations} from './components/AffiliateRecommendations';
 import {EditorialGuideAndFaq} from './components/EditorialGuideAndFaq';
 import {Footer} from './components/Footer';
 import {Header} from './components/Header';
@@ -319,12 +318,6 @@ export default function App() {
           slotId="medianet-ad-stylecue-mid"
           adSize="728x90"
           variant="leaderboard"
-          t={t}
-        />
-
-        <AffiliateRecommendations
-          advisory={advisory}
-          calibration={calibration}
           t={t}
         />
 

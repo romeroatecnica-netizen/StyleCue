@@ -310,7 +310,7 @@ export const ar: TranslationDictionary = {
     affiliateTitle: 'أساسيات مختارة لملفك',
     affiliateSubtitle: 'فئات عملية متوافقة مع ملمس الشعر والبشرة ولوحة ألوانك.',
     affiliateDisclosure:
-      'إفصاح الشراكة: تستخدم الروابط rel="sponsored nofollow noopener". قد يحصل StyleCue على عمولة دون أي تكلفة إضافية عليك عند تفعيل روابط الشركاء.',
+      'إفصاح الشراكة القانوني: تشير روابط المنتجات إلى Amazon España (amazon.es) مع السمة rel="sponsored nofollow noopener". بصفتنا شريكًا في برنامج أمازون، يحصل StyleCue على عمولة من المشتريات المؤهلة دون أي تكلفة إضافية عليك.',
     affiliateCta: 'استكشاف الفئة',
     affiliateCategories: {
       hair: {title: 'العناية بالشعر حسب طبيعته', desc: 'كريمات ترطيب خفيفة وفرش طبيعية وحماية من الرطوبة.', tag: 'الشعر'},

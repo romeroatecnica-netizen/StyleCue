@@ -8,6 +8,10 @@ import {
   MakeupCroquisDiagram,
   OutfitCroquisDiagram,
 } from './CroquisIllustrations';
+import {
+  AffiliateDisclosureFooter,
+  PillarAffiliateLink,
+} from './AffiliateRecommendations';
 
 interface AdvisoryResultsProps {
   advisory: AdvisoryResult;
@@ -142,6 +146,13 @@ export function AdvisoryResults({
                     desc={t.results.hairPillar.finishByClimate[calibration.climate]}
                   />
                 </dl>
+
+                <PillarAffiliateLink
+                  category="hair"
+                  calibration={calibration}
+                  advisory={advisory}
+                  t={t}
+                />
               </article>
             )}
 
@@ -177,6 +188,13 @@ export function AdvisoryResults({
                     desc={t.results.makeupPillar.occasionFinish[calibration.occasion]}
                   />
                 </dl>
+
+                <PillarAffiliateLink
+                  category="skin"
+                  calibration={calibration}
+                  advisory={advisory}
+                  t={t}
+                />
               </article>
             )}
 
@@ -212,6 +230,13 @@ export function AdvisoryResults({
                     desc={t.results.outfitPillar.avoidByContrast[calibration.contrast]}
                   />
                 </dl>
+
+                <PillarAffiliateLink
+                  category="wardrobe"
+                  calibration={calibration}
+                  advisory={advisory}
+                  t={t}
+                />
               </article>
             )}
           </div>
@@ -325,9 +350,18 @@ export function AdvisoryResults({
                   })}
                 </div>
               </div>
+
+              <PillarAffiliateLink
+                category="colorimetry"
+                calibration={calibration}
+                advisory={advisory}
+                t={t}
+              />
             </article>
           )}
         </div>
+
+        <AffiliateDisclosureFooter t={t} />
       </div>
     </section>
   );

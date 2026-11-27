@@ -462,7 +462,7 @@ export const en: TranslationDictionary = {
     affiliateTitle: 'Curated Essentials for Your Profile',
     affiliateSubtitle: 'Practical categories aligned with your selected finish, climate, and wardrobe palette.',
     affiliateDisclosure:
-      'Affiliate disclosure: Links below use rel="sponsored nofollow noopener". StyleCue may earn a small commission at no extra cost to you if you configure partner storefront URLs.',
+      'Affiliate disclosure: Product links point to Amazon España (amazon.es) with rel="sponsored nofollow noopener". As an Amazon Associate, StyleCue earns from qualifying purchases at no extra cost to you.',
     affiliateCta: 'Explore Category',
     affiliateCategories: {
       hair: {

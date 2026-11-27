@@ -310,7 +310,7 @@ export const zh: TranslationDictionary = {
     affiliateTitle: '匹配您个人档案的实用清单',
     affiliateSubtitle: '根据您的发质纹理、护肤需求与衣橱基调整理的精选品类。',
     affiliateDisclosure:
-      '联盟链接说明：外链已标注 rel="sponsored nofollow noopener"。配置合作商链接后，StyleCue 可能获得少量推广佣金且不增加您的购买成本。',
+      '联盟链接声明：产品推荐链接均指向亚马逊西班牙站（amazon.es），并标注 rel="sponsored nofollow noopener"。作为亚马逊联盟成员，StyleCue 可从符合条件的购买中获得佣金，且不会增加您的任何额外费用。',
     affiliateCta: '浏览品类',
     affiliateCategories: {
       hair: {title: '匹配发质的护发与造型', desc: '轻盈保湿乳、天然猪鬃梳及抗湿毛躁护理。', tag: '护发护理'},

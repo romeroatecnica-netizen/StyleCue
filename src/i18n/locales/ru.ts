@@ -311,7 +311,7 @@ export const ru: TranslationDictionary = {
     affiliateTitle: 'Полезные категории под ваш профиль',
     affiliateSubtitle: 'Практические разделы для ухода за волосами, кожей и базового гардероба.',
     affiliateDisclosure:
-      'Партнерское уведомление: ссылки используют rel="sponsored nofollow noopener". StyleCue может получать комиссию без доплаты для вас при указании партнерских URL.',
+      'Партнерское уведомление: ссылки на товары ведут на Amazon España (amazon.es) с атрибутом rel="sponsored nofollow noopener". Как участник партнерской программы Amazon, StyleCue получает комиссию с подходящих покупок без доплаты для вас.',
     affiliateCta: 'Открыть раздел',
     affiliateCategories: {
       hair: {title: 'Уход и стайлинг по текстуре волос', desc: 'Легкие кремы, натуральные щетки и защита от влажности.', tag: 'Волосы'},

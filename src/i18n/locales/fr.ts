@@ -311,7 +311,7 @@ export const fr: TranslationDictionary = {
     affiliateTitle: 'Sélection d’Essentiels Adaptés',
     affiliateSubtitle: 'Catégories cohérentes avec votre fini de peau, climat et palette.',
     affiliateDisclosure:
-      'Mention d’affiliation : Les liens utilisent rel="sponsored nofollow noopener". StyleCue peut percevoir une commission sans surcoût si vous renseignez vos liens partenaires.',
+      'Mention légale d’affiliation : Les liens produits pointent vers Amazon España (amazon.es) avec rel="sponsored nofollow noopener". En tant que Partenaire Amazon, StyleCue perçoit une rémunération sur les achats éligibles, sans surcoût pour vous.',
     affiliateCta: 'Découvrir',
     affiliateCategories: {
       hair: {title: 'Soins Capilaires selon Texture', desc: 'Crèmes légères, brosses naturelles et soins anti-humidité.', tag: 'Cheveux'},

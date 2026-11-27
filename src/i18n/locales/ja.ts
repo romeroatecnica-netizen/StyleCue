@@ -310,7 +310,7 @@ export const ja: TranslationDictionary = {
     affiliateTitle: 'あなたのプロフィールに合う基本アイテム',
     affiliateSubtitle: '髪質・肌仕上げ・60-30-10 パレットに合わせた実用的カテゴリー。',
     affiliateDisclosure:
-      'アフィリエイト開示：各リンクには rel="sponsored nofollow noopener" が付与されています。提携リンクを設定すると、利用者に追加費用なしで StyleCue に紹介料が入る場合があります。',
+      'アフィリエイト開示：商品リンクはすべて rel="sponsored nofollow noopener" 付きで Amazon España（amazon.es）へ遷移します。Amazon アソシエイトとして、StyleCue は適格販売により追加費用なしで収入を得る場合があります。',
     affiliateCta: 'カテゴリーを見る',
     affiliateCategories: {
       hair: {title: '髪質別ヘアケア・仕上げアイテム', desc: '軽い保湿クリームや天然毛ブラシ、湿気対策セラム。', tag: 'ヘアケア'},

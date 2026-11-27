@@ -462,7 +462,7 @@ export const es: TranslationDictionary = {
     affiliateTitle: 'Recursos y Esenciales Recomendados',
     affiliateSubtitle: 'Categorías prácticas alineadas con tu acabado facial, textura capilar y paleta.',
     affiliateDisclosure:
-      'Transparencia de afiliación: Los enlaces utilizan rel="sponsored nofollow noopener". StyleCue puede recibir una comisión sin coste adicional para ti al configurar tus URLs de socio.',
+      'Aviso legal de afiliación: Los enlaces de productos apuntan a Amazon España (amazon.es) con rel="sponsored nofollow noopener". En calidad de Afiliado de Amazon, StyleCue obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables, sin coste adicional para ti.',
     affiliateCta: 'Explorar categoría',
     affiliateCategories: {
       hair: {

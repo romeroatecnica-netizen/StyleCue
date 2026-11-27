@@ -311,7 +311,7 @@ export const de: TranslationDictionary = {
     affiliateTitle: 'Empfohlene Essentials für Ihr Profil',
     affiliateSubtitle: 'Praxisnahe Kategorien passend zu Hautfinish, Haartextur und Farbpalette.',
     affiliateDisclosure:
-      'Affiliate-Hinweis: Ausgehende Links nutzen rel="sponsored nofollow noopener". StyleCue kann bei hinterlegten Partner-URLs eine Provision ohne Mehrkosten erhalten.',
+      'Affiliate-Hinweis: Produktlinks führen zu Amazon España (amazon.es) mit rel="sponsored nofollow noopener". Als Amazon-Partner verdient StyleCue an qualifizierten Verkäufen – für Sie entstehen keine Mehrkosten.',
     affiliateCta: 'Kategorie ansehen',
     affiliateCategories: {
       hair: {title: 'Strukturgerechte Haarpflege', desc: 'Leichte Pflegecremes, Naturborsten und Anti-Frizz-Schutz.', tag: 'Haarpflege'},

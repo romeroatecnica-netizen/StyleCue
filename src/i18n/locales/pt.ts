@@ -311,7 +311,7 @@ export const pt: TranslationDictionary = {
     affiliateTitle: 'Essenciais Recomendados para Seu Perfil',
     affiliateSubtitle: 'Categorias alinhadas ao acabamento facial, textura capilar e paleta.',
     affiliateDisclosure:
-      'Transparência de afiliação: Os links usam rel="sponsored nofollow noopener". O StyleCue pode receber comissão sem custo extra ao configurar URLs de parceiros.',
+      'Aviso legal de afiliação: Os links de produtos direcionam para a Amazon España (amazon.es) com rel="sponsored nofollow noopener". Como Associado da Amazon, o StyleCue recebe comissão por compras qualificadas, sem custo adicional para você.',
     affiliateCta: 'Ver categoria',
     affiliateCategories: {
       hair: {title: 'Cuidados Capilares por Textura', desc: 'Cremes leves de definição e proteção térmica/umidade.', tag: 'Cabelo'},
